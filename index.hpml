@@ -1,0 +1,33 @@
+//mistério em Paris, 14, comédia, mistério
+//a era do gelo: o big bang, LIVRE, animação
+//maze runner: correr ou morrer, 14, ação,mistério
+//madagascar, 12, avntura animaç
+//annabelle, 14, suspense, terror
+
+
+
+let campoldade;
+
+function setup() {
+  createCanvas(400, 400);
+ campoldade = createInput("5");
+}
+
+function draw() {
+  background(220);
+  let idade = campoldade.value();
+  let recomendacao = geraRecomendacao(idade);
+  text(recomendacao, width / 2, height / 2);  
+}
+
+function geraRecomendacao(idade) {
+  if(idade >= 10) {
+    if(idade >= 14) {
+      return "maze runner: correr ou morrer";
+    } else {
+      return "madagascar";
+    }
+  } else {
+    return "a era do gelo: o big bang";
+  }
+}
